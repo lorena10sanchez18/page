@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+
+		Metodo Quick short o Busqueda Rapida
+	</title>
+</head>
+<header>  Metodo de Ordenamiento Radix</header>
+<body>
+<img src="C:\Users\Usuario\Desktop\page\ekn.png" width="80" height="80" alt="imagen java">
+<br></br>
+<font size=1 face="Arial" color="black"> Metodos de Ordenamiento </h3>
+<p> Este es el algoritmo de metodo de ordenamiento radix</p>
+
+<p>
+	public class MetodoRadix {
+	<br>
+	public class MetodoRadix {
+	<br>
+
+    public void metodoo4(){
+    <br>
+
+
+    }
+    <br>
+    public static void main ()
+    <br>
+        {
+        <br>
+            int array[] = {170, 45, 75, 90, 802, 24, 2, 66};
+            <br>
+            int n = array.length;
+            <br>
+            radixsort(array, n);
+            <br>
+            print(array, n);
+            <br>
+        }
+        <br>
+
+        public static void print(int arr[], int n)
+        <br>
+        {
+        <br>
+            for (int i=0; i<n; i++)
+            <br>
+            <br>
+                System.out.print(arr[i]+" ");
+                <br>
+        }
+        <br>
+
+        // The main function to that sorts arr[] of size n using
+        <br>
+        // Radix Sort
+        <br>
+        static void radixsort(int arr[], int n)
+        <br>
+        {
+        <br>
+            // Buscar el número máximo para saber el número de dígitos
+            <br>
+            int m = getMax(arr, n);
+            <br>
+
+            // Hacer el conteo de clasificación para cada dígito. Tenga en cuenta que en su lugar
+            <br>
+            // de pasar número de dígito, exp se pasa. Exp es 10 ^ i
+            <br>
+            // donde i es el número de dígito actual
+            <br>
+            for (int exp = 1; m/exp > 0; exp *= 10)
+            <br>
+                countSort(arr, n, exp);
+                <br>
+        }
+        <br>
+
+        // Una función para hacer contando tipo de array [] según
+        <br>
+        // el dígito representado por exp.
+        <br>
+        static void countSort(int array[], int n, int exp)
+        <br>
+        {
+        <br>
+            int salida[] = new int[n]; // salida array
+            <br>
+            int i;
+            <br>
+            int count[] = new int[10];
+            <br>
+            Arrays.fill(count,0);
+            <br>
+
+            // Almacenar el número de ocurrencias en el conteo []
+            <br>
+            for (i = 0; i < n; i++)
+            <br>
+                count[ (array[i]/exp)%10 ]++;
+                <br>
+
+            // Cambiar el recuento [i] para que el recuento [i] contenga ahora
+            <br>
+            // posición real de este dígito en salida []
+            <br>
+            for (i = 1; i < 10; i++)
+            <br>
+                count[i] += count[i - 1];
+                <br>
+
+            // Construir el array de salida
+            <br>
+            for (i = n - 1; i >= 0; i--)
+            <br>
+            {
+            <br>
+                salida[count[ (array[i]/exp)%10 ] - 1] = array[i];
+                <br>
+                count[ (array[i]/exp)%10 ]--;
+                <br>
+            }
+            <br>
+
+            // Copie el array de salida a array [], de modo que array [] ahora
+            <br>
+            // contiene números clasificados según el dígito actual
+            <br>
+            for (i = 0; i < n; i++)
+            <br>
+                array[i] = salida[i];
+                <br>
+        }
+        <br>
+
+        static int getMax(int array[], int n)
+        <br>
+        {
+        <br>
+            int mx = array[0];
+            <br>
+            for (int i = 1; i < n; i++)
+            <br>
+                if (array[i] > mx)
+                <br>
+                    mx = array[i];
+                    <br>
+            return mx;
+            <br>
+        }
+        <br>
+    }
+
+
+	
+
+
+</p>
+
+</body>
+</html>

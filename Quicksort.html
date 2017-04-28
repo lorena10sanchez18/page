@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+
+		Metodo Quick short o Busqueda Rapida
+	</title>
+</head>
+<header>  Metodo de Ordenamiento Busqeuda Rapida</header>
+<body>
+<img src="C:\Users\Usuario\Desktop\page\ekn.png" width="80" height="80" alt="imagen java">
+<br></br>
+<font size=1 face="Arial" color="black"> Metodos de Ordenamiento </h3>
+<p> Este es el algoritmo de metodo de ordenamiento Busqueda Rapida</p>
+
+<p>
+	
+	public class QuickSort {
+	<br>
+
+
+        private int array[];
+        <br>
+        private int tamaño;
+        <br>
+
+    public static void main(String a[]) {
+    <br>
+
+
+        QuickSort clasificador = new QuickSort();
+        <br>
+        int[] entrada = {24, 2, 45, 20, 46, 75, 2, 56, 99, 53, 12};
+        <br>
+        clasificador.ordenar(entrada);
+        <br>
+        for (int i : entrada) {
+        <br>
+            System.out.print(i);
+            <br>
+            System.out.print(" ");
+            <br>
+        }
+        <br>
+
+    private void quickSort(int indiceInferior, int indiceSuperior) {
+    <br>
+
+        int i = indiceInferior;
+        <br>
+        int j = indiceSuperior;
+        <br>
+
+        // Calcular el número de pivote, estoy tomando pivote como número de índice medio
+        <br>
+        int pivote = array[indiceInferior + (indiceSuperior - indiceInferior) / 2];
+        <br>
+        // Divide en dos  arrays
+        <br>
+        while (i <= j) {
+        <br>
+            /**
+            <br>
+             * En cada iteración, identificaremos un número del lado izquierdo que
+             <br>
+             * Es mayor que el valor de pivote, y también vamos a identificar un número
+             <br>
+             * Desde el lado derecho que es menor que el valor de pivote. Una vez que la búsqueda
+             <br>
+             * Se hace, entonces intercambiamos ambos números.
+             <br>
+             */
+             <br>
+            while (array[i] < pivote) {
+            <br>
+                i++;
+                <br>
+            }
+            <br>
+            while (array[j] > pivote) {
+            <br>
+                j--;
+                <br>
+            }
+            <br>
+            if (i <= j) {
+            <br>
+                numerosDeIntercambio(i, j);
+                <br>
+                //Mover el índice a la siguiente posición en ambos lados
+                <br>
+                i++;
+                <br>
+                j--;
+                <br>
+            }
+            <br>
+        }
+        <br>
+        // Llamada quickSort () método recursivamente
+        <br>
+        if (indiceInferior < j)
+        <br>
+            quickSort(indiceInferior, j);
+            <br>
+        if (i < indiceSuperior)
+        <br>
+            quickSort(i, indiceSuperior);
+            <br>
+    }
+    <br>
+
+    private void numerosDeIntercambio(int i, int j) {
+    <br>
+        int temp = array[i];
+        <br>
+        array[i] = array[j];
+        <br>
+        array[j] = temp;
+        <br>
+    }
+    <br>
+
+    public void ordenar(int[] arrayEntrada) {
+    <br>
+
+        if (arrayEntrada == null || arrayEntrada.length == 0) {
+        <br>
+            return;
+            <br>
+        }
+        <br>
+        this.array = arrayEntrada;
+        <br>
+        tamaño = arrayEntrada.length;
+        <br>
+        quickSort(0, tamaño - 1);
+        <br>
+    }
+    <br>
+
+}
+
+</p>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+
+		Metodo Inserccion
+	</title>
+</head>
+<header>  Metodo de Ordenamiento Inserccion</header>
+<body>
+<img src="C:\Users\Usuario\Desktop\page\ekn.png" width="80" height="80" alt="imagen java">
+<br></br>
+<font size=1 face="Arial" color="black"> Metodos de Ordenamiento </h3>
+<p> Este es el algoritmo de metodo de ordenamiento por inserccion</p>
+
+
+<p>
+	
+public class MetodoInserccion {
+<br>
+
+
+    public void metodoo() {
+    <br>
+        int num[] = {3, 6, 98, 67, 45, 34, 234, 654, 786, 900, 989, 9, 1, 2};
+        <br>
+        MetodoInserccion insercion = new MetodoInserccion();
+        <br>
+        int[] resultado = insercion.insert(num);
+        <br>
+        System.out.println(" metodo de inserccion");
+        <br>
+        for (int S = 0; S < resultado.length; S++) {
+        <br>
+            System.out.println(resultado[S]);
+            <br>
+        }
+        <br>
+    }
+<br>
+    public int[] insert(int[] elemento) {
+    <br>
+        int auxiliar;
+        <br>
+        for (int M = 1; M < elemento.length; M++) {
+        <br>
+            auxiliar = elemento[M];
+            <br>
+            for (int S = M - 1; S >= 0 && elemento[S] > auxiliar; S--) {
+            <br>
+                elemento[S + 1] = elemento[S];
+                <br>
+                elemento[S] = auxiliar;
+                <br>
+            }
+<br>
+        }
+        <br>
+        return elemento;
+        <br>
+    }
+</p>
+
+</body>
+</html>
